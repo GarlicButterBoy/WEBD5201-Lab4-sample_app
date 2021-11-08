@@ -21,24 +21,15 @@ module SessionsHelper
         log_in user
         @current_user = user
       end
-    end
-  end
+    end  end
 
   # Returns true if the user is logged in, false otherwise.
   def logged_in?
     !current_user.nil?
   end
 
-  # Forgets a persistent session.
-  def forget(user)
-    user.forget
-    cookies.delete(:user_id)
-    cookies.delete(:remember_token)
-  end
-
   # Logs out the current user.
   def log_out
-    forget(current_user)
     session.delete(:user_id)
     @current_user = nil
   end
