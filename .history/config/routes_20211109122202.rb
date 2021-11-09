@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  Rails.application.routes.default_url_options[:host] = "localhost:3000"
   get 'sessions/new'
   # root 'static_pages#home'
   # #get 'static_pages/home'
